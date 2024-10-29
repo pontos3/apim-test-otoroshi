@@ -1,0 +1,27 @@
+services:
+  otoroshi:
+    image: maif/otoroshi:16.19.0
+    ports:
+      - "8080:8080"
+    environment:
+      - JDK_JAVA_OPTIONS='-Dconfig.file=/usr/app/otoroshi/conf/oto.conf'
+    volumes:
+      - ./conf:/usr/app/otoroshi/conf
+      - ./filedb:/usr/app/filedb
+    networks:
+      othoroshi_default:
+        aliases:
+          - testjsonplateforme
+        driver_opts:
+          com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
+  httpbin:
+    image: kennethreitz/httpbin
+    ports:
+      - "80:80"
+    networks:
+      othoroshi_default:
+        aliases:
+          - testjsonplateforme
+
+networks:
+  othoroshi_default:
