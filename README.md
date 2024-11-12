@@ -30,3 +30,5 @@ docker compose up -d
 
 * Une instance otoroshi : l'outil à tester
 * une intance httbin : une api de test
+* une instance elasticSearch : https://medium.com/@peterselvaponseelan/deploy-elasticsearch-and-kibana-using-docker-compose-319dee03c0d1
+* une instance kibana : https://medium.com/@peterselvaponseelan/deploy-elasticsearch-and-kibana-using-docker-compose-319dee03c0d1 
